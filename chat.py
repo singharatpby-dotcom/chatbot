@@ -15,34 +15,52 @@ st.set_page_config(
 # --- 2. Custom CSS เพื่อความสวยงาม ---
 st.markdown("""
     <style>
-    /* ปรับแต่งฟอนต์และสีพื้นหลัง */
     @import url('https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;700&display=swap');
     
     html, body, [class*="css"] {
         font-family: 'Sarabun', sans-serif;
+        color: #1a1a1a; /* เปลี่ยนสีตัวอักษรหลักให้เข้มขึ้น */
     }
 
     .stApp {
-        background-color: #f0f2f6;
+        background-color: #f8f9fa;
     }
 
-    /* ตกแต่ง Header */
+    /* ปรับแต่ง Header ให้เด่นชัด */
     .main-header {
-        font-size: 2rem;
+        font-size: 2.2rem;
         font-weight: 700;
-        color: #1E3A8A;
+        color: #ffffff;
         text-align: center;
-        padding: 1rem;
-        background: white;
+        padding: 1.5rem;
+        background: linear-gradient(90deg, #1E3A8A, #3B82F6); /* ไล่เฉดสีน้ำเงินเข้ม */
         border-radius: 15px;
-        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
         margin-bottom: 2rem;
     }
 
-    /* ปรับแต่งช่อง Chat Input */
-    .stChatInput {
-        border-radius: 20px;
+    /* ปรับปรุงสีข้อความใน Chat Message ให้เข้มชัดเจน */
+    .stChatMessage {
+        color: #1a1a1a !important;
+        background-color: #ffffff !important;
+        border: 1px solid #e0e0e0;
+        border-radius: 15px;
+        margin-bottom: 10px;
     }
+
+    /* เน้นสีข้อความที่ AI ตอบ (Model) */
+    [data-testid="stChatMessage"] p {
+        color: #1a1a1a !important;
+        font-size: 1.05rem;
+        line-height: 1.6;
+    }
+
+    /* ปรับแต่ง Bullet points ให้เห็นชัด */
+    [data-testid="stChatMessage"] li {
+        color: #1a1a1a !important;
+        font-weight: 500;
+    }
+
     </style>
     <div class="main-header">💬 ผู้ช่วยอัจฉริยะด้านคอมพิวเตอร์</div>
     """, unsafe_allow_html=True)
