@@ -106,7 +106,7 @@ model = genai.GenerativeModel(
 @st.cache_data
 def load_data():
     try:
-        file_name = "Prepare for chatbot.csv"
+        file_name = "Prepare for chatbot .csv"
         df = pd.read_csv(file_name)
         df.columns = [col.strip() for col in df.columns]
         qa_df = df.dropna(subset=['User_query', 'Chatbot_response'])
@@ -175,3 +175,4 @@ if prompt := st.chat_input("พิมพ์คำถามของคุณท�
                 st.session_state["messages"].append({"role": "model", "content": full_response})
             except Exception as e:
                 st.error(f"เกิดข้อผิดพลาดในการเชื่อมต่อ: {e}")
+
